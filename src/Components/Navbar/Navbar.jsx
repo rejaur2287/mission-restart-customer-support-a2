@@ -50,7 +50,9 @@ const Navbar = () => {
               </li>
             </ul>
           </div>
-          <a className="font-bold text-2xl items-center">CS — Ticket System</a>
+          <a className="font-bold text-2xl items-center" href="">
+            CS — Ticket System
+          </a>
         </div>
         <div className="navbar-end flex place-content-end justify-end w-full mr-4">
           <ul className="menu menu-horizontal px-1 hidden lg:flex text-lg">
