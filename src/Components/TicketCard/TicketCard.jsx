@@ -10,7 +10,7 @@ const TicketCard = ({ ticket }) => {
 
           {/* Status Badge */}
           <div
-            className={`badge px-4 py-3 text-sm font-medium gap-2 ${
+            className={`badge whitespace-nowrap px-4 py-3 text-sm font-medium gap-2 ${
               ticket.status === "Open" ? "badge-success" : "badge-warning"
             }`}
           >
@@ -50,7 +50,6 @@ const TicketCard = ({ ticket }) => {
             <span>{ticket.customerName}</span>
 
             <div className="flex items-center gap-1">
-              {/* <CalendarDays size={18} /> */}
               <span>{ticket.date}</span>
             </div>
           </div>

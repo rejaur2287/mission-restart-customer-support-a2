@@ -60,6 +60,12 @@ const Footer = () => {
           </a>
         </nav>
       </footer>
+      <div className="mt-8">
+        <hr className="my-5 text-gray-500" />
+        <p className="text-center">
+          © 2025 CS — Ticket System. All rights reserved.
+        </p>
+      </div>
     </div>
   );
 };
