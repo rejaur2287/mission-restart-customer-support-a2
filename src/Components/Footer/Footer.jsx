@@ -6,10 +6,10 @@ import emailIcon from "../../assets/fi_6244710.png";
 
 const Footer = () => {
   return (
-    <div>
-      <footer className="grid grid-cols-1 md:grid-cols-[32%_16%_16%__16%_18%] gap-4 text-base-content justify-between w-11/12 mx-auto">
+    <div className=" bg-gray-700 text-white p-16">
+      <footer className="grid grid-cols-1 md:grid-cols-[32%_16%_16%__16%_18%] gap-4 justify-between  text-white">
         <nav>
-          <a class="text-2xl font-bold my-6" href="">
+          <a className="text-2xl font-bold my-6" href="">
             CS — Ticket System
           </a>
           <p>
