@@ -34,7 +34,7 @@ const StatusBar = ({ tasks, handleComplete, resolvedTasks }) => {
             resolvedTasks.map((resolvedTask) => (
               <div
                 key={resolvedTask.id}
-                className="flex justify-between items-center bg-white p-3 rounded-lg shadow"
+                className="flex justify-between items-center bg-blue-100 p-3 rounded-lg shadow"
               >
                 <p className="text-black">{resolvedTask.title}</p>
               </div>

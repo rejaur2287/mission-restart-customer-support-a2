@@ -2,24 +2,28 @@ import React, { use, useState } from "react";
 import TicketCard from "../TicketCard/TicketCard";
 import StatusBar from "../StatusBar/StatusBar";
 import Banner from "../Banner/Banner";
+import { toast } from "react-toastify";
 
 const Tickets = ({ ticketPromise }) => {
-  const tickets = use(ticketPromise);
+  const initialTickets = use(ticketPromise);
+  const [tickets, setTickets] = useState(initialTickets);
   const [tasks, setTasks] = useState([]);
   const [resolvedTasks, setResolvedTasks] = useState([]);
   const handleAddTask = (ticket) => {
     setTasks([...tasks, ticket]);
-    alert("Ticket added to Task Status!");
+    toast("Ticket added to Task Status!");
     // console.log(tasks);
   };
 
   const handleComplete = (id) => {
-    alert("Task Completed!");
+    toast("Task Completed!");
     const completedTask = tasks.find((task) => task.id === id);
     const remaining = tasks.filter((task) => task.id !== id);
     // console.log(remaining);
     setTasks(remaining);
     setResolvedTasks([...resolvedTasks, completedTask]);
+    const remainingTickets = tickets.filter((ticket) => ticket.id !== id);
+    setTickets(remainingTickets);
   };
   return (
     <>
