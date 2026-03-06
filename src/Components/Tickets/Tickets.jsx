@@ -6,7 +6,7 @@ import Banner from "../Banner/Banner";
 const Tickets = ({ ticketPromise }) => {
   const tickets = use(ticketPromise);
   const [tasks, setTasks] = useState([]);
-  const [resolvedTasks, setResolvedTasks] = useState(0);
+  const [resolvedTasks, setResolvedTasks] = useState([]);
   const handleAddTask = (ticket) => {
     setTasks([...tasks, ticket]);
     alert("Ticket added to Task Status!");
@@ -15,10 +15,11 @@ const Tickets = ({ ticketPromise }) => {
 
   const handleComplete = (id) => {
     alert("Task Completed!");
+    const completedTask = tasks.find((task) => task.id === id);
     const remaining = tasks.filter((task) => task.id !== id);
     // console.log(remaining);
     setTasks(remaining);
-    setResolvedTasks(resolvedTasks + 1);
+    setResolvedTasks([...resolvedTasks, completedTask]);
   };
   return (
     <>
@@ -37,7 +38,11 @@ const Tickets = ({ ticketPromise }) => {
               ))}
             </div>
           </div>
-          <StatusBar tasks={tasks} handleComplete={handleComplete}></StatusBar>
+          <StatusBar
+            tasks={tasks}
+            resolvedTasks={resolvedTasks}
+            handleComplete={handleComplete}
+          ></StatusBar>
         </div>
       </div>
     </>
