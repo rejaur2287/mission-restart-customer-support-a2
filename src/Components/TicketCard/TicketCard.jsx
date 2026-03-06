@@ -1,8 +1,11 @@
 import React from "react";
 
-const TicketCard = ({ ticket }) => {
+const TicketCard = ({ ticket, handleAddTask }) => {
   return (
-    <div className="card bg-base-200 shadow-md border border-base-200 my-4">
+    <div
+      className="card bg-base-200 shadow-md border border-base-200 my-4"
+      onClick={() => handleAddTask(ticket)}
+    >
       <div className="card-body p-6">
         {/* Top Row */}
         <div className="flex items-start justify-between gap-4">

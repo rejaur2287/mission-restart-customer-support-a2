@@ -10,7 +10,7 @@ function App() {
   return (
     <>
       <Navbar></Navbar>
-      <Banner></Banner>
+      {/* <Banner></Banner> */}
       <Suspense fallback={<h3>Tickets are Loading...</h3>}>
         <Tickets ticketPromise={ticketPromise}></Tickets>
       </Suspense>
